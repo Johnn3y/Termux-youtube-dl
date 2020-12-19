@@ -1,0 +1,16 @@
+#!/data/data/com.termux/files/usr/bin/bash
+echo "[1]Music, opus, best quality"
+echo "[0]Video"
+read -n 1 var
+case $var in
+	1)
+		cd $HOME/storage/music
+		youtube-dl -x --audio-format opus $1
+		;;
+	0)
+		cd $HOME/storage/movies
+		youtube-dl $1
+		;;
+	*)
+		exit 1
+esac
