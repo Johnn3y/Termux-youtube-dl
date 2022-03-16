@@ -5,15 +5,13 @@ echo "[5]Update only"
 read -n 1 var
 case $var in
 	1)
-		cd $HOME/storage/music
-		youtube-dl -x --audio-format opus $1
+		youtube-dl -x --audio-quality 0 --audio-format opus -o "$HOME/storage/music/%(title)s-%(id)s.%(ext)s" $1
 		;;
 	0)
-		cd $HOME/storage/movies
-		youtube-dl $1
+		youtube-dl -o "$HOME/storage/movies/%(title)s-%(id)s.%(ext)s" $1
 		;;
 	5)
-		pkg udate && pgk upgrade
+		pkg udate && pkg upgrade
 		pip install -U youtube-dl
 		;;
 	*)
