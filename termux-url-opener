@@ -11,7 +11,7 @@ case $var in
 		youtube-dl -o "$HOME/storage/movies/%(title)s-%(id)s.%(ext)s" $1
 		;;
 	5)
-		pkg udate && pkg upgrade
+		pkg update && pkg upgrade
 		pip install -U youtube-dl
 		;;
 	*)
